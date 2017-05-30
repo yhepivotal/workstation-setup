@@ -15,3 +15,11 @@ bash-it enable completion git
 bash-it enable plugin ssh
 bash-it enable plugin rbenv
 bash-it enable completion ssh
+
+brew install fasd
+echo 'fasd_cache="$HOME/.fasd-init-bash"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+    fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+  fi
+  source "$fasd_cache"
+  unset fasd_cache' >> ~/.bash_profile
