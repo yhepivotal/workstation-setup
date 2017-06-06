@@ -23,3 +23,8 @@ if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
   fi
   source "$fasd_cache"
   unset fasd_cache' >> ~/.bash_profile
+
+mkdir ~/.bin
+
+echo 'export PATH="$PATH:/Users/pivotal/.bin"' >> ~/.bash_profile
+echo 'export FEATURE_TEST_URL="http://localhost:8080"' >> ~/.bash_profile
